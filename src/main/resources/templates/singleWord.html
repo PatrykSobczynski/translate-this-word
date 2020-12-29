@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Translate app</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-<h3>Translate App</h3>
-<h4>Translate this word:</h4>
-    <div class = "sWord">
-        <a th:text="${w.getWord()}"></a>
-        <div>
+    <div class = "mainContainer">
+        <div class = "center">
+            <h3>Translate App</h3>
+            <h4>Translate this word:</h4>
+            <a th:text="${w.getWord()}"></a>
             <form th:action="@{/word{id}/updateAnswer(id = ${w.getId()})}" th:object="${w}" method="post">
-                <input th:type="text" th:field="*{answer}">
+                <input class = "answer" th:type="text" th:field="*{answer}">
                 <button type="submit" value="confirm">confirm</button>
             </form>
             <button onclick="showFunction()"> Check </button>
-        </div>
         <button th:type="submit">
             <a style="text-decoration: none;
                color:black;"
@@ -25,6 +25,7 @@
             <a th:text="${w.getTranslateWord()}"></a>
             <br>
             <a th:text="${w.isCorrect()}"></a>
+        </div>
         </div>
     </div>
 

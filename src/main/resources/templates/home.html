@@ -3,34 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Translate app</title>
+    <link rel = "stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-<h3>Translate App</h3>
-<!--    <div class = "container" th:each="w : ${rWords}">-->
-<!--        <a th:text="${w.getWord()}"></a>-->
-<!--        <div th:object="${rWords}">-->
-<!--            <input th:type="text" th:field="*{answer}">-->
-<!--            <button onclick="showFunction()"> Check </button>-->
-            <button type="submit" value="Draw word">
-                <a style="text-decoration: none;
-                      color:black;"
-                   th:href="@{/word{id}(id = ${rWords.getId()})}">Draw word</a>
-            </button>
-        </div>
-<!--        <div id = "CorrectWordDiv" th:each="w : ${rWords}" style="display: none">-->
-<!--            <a th:text="${w.getTranslateWord()}"></a>-->
-<!--        </div>-->
+<div class = "mainContainer">
+    <div class = "center">
+    <h3>Translate App</h3>
+    <button type="submit" value="Draw word">
+        <a style="text-decoration: none; color:black;"
+           th:href="@{/word{id}(id = ${rWords.getId()})}">Draw word</a>
+    </button>
     </div>
-
-<script>
-    function showFunction() {
-        const x = document.getElementById("CorrectWordDiv");
-        if (x.style.display === "none") {
-            x.style.display = 'block';
-        } else {
-            x.style.display = "none";
-        }
-    }
-</script>
+</div>
 </body>
 </html>

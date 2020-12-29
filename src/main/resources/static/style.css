@@ -1,0 +1,10 @@
+.mainContainer {
+    border-style: solid;
+    width: 20%;
+    height: 300px;
+    background: #d3e8cd;
+}
+
+.center {
+    margin-left: 10px;
+}
