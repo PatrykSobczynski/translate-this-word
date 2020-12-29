@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Translate app</title>
+</head>
+<body>
+<h3>Translate App</h3>
+<h4>Translate this word:</h4>
+    <div class = "sWord">
+        <a th:text="${w.getWord()}"></a>
+        <div>
+            <form th:action="@{/word{id}/updateAnswer(id = ${w.getId()})}" th:object="${w}" method="post">
+                <input th:type="text" th:field="*{answer}">
+                <button type="submit" value="confirm">confirm</button>
+            </form>
+            <button onclick="showFunction()"> Check </button>
+        </div>
+        <button th:type="submit">
+            <a style="text-decoration: none;
+               color:black;"
+               th:href="@{/word{id}(id = ${rWords.getId()})}">Draw word</a>
+        </button>
+        <div id = "CorrectWordDiv" style="display: none">
+            <a th:text="${w.getTranslateWord()}"></a>
+            <br>
+            <a th:text="${w.isCorrect()}"></a>
+        </div>
+    </div>
+
+<script>
+    function showFunction() {
+        const x = document.getElementById("CorrectWordDiv");
+        if (x.style.display === "none") {
+            x.style.display = 'block';
+        } else {
+            x.style.display = "none";
+        }
+    }
+</script>
+</body>
+</html>
