@@ -53,7 +53,7 @@ public class TranslateServiceImpl implements TranslateService {
         wordList.add(new Word(10L, "pies", "dog"));
         wordList.add(new Word(11L, "analiza", "analyze"));
         wordList.add(new Word(12L, "ostry", "incisive"));
-        wordList.add(new Word(13L, "niezależny", "independent / maverick"));
+        wordList.add(new Word(13L, "niezależny", "independent"));
         wordList.add(new Word(14L, "kwaśny", "acid"));
         wordList.add(new Word(15L, "powietrze", "air"));
         wordList.add(new Word(16L, "odpowiedź", "answer"));

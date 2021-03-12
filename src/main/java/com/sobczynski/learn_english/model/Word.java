@@ -26,7 +26,7 @@ public class Word {
     public String isCorrect() {
         if(answer != null) {
             if (getAnswer().equalsIgnoreCase((getTranslateWord()))) {
-                return "Correct :)";
+                return "Correct";
             }
             return "Try again";
         }
